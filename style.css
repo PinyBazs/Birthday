@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+    background: url('./assets/bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* sötét overlay */
+.overlay {
+    background: rgba(0,0,0,0.65);
+    padding: 40px;
+    border-radius: 25px;
+    width: 420px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* animáció */
+.fade {
+    animation: fade 0.8s ease;
+}
+@keyframes fade {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+.hidden { display:none; }
+
+h1 {
+font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+p{
+    font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+/* gomb */
+button {
+    background: linear-gradient(45deg,#b8976a,#c4aa85);
+    border: none;
+    padding: 12px 22px;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+button:hover { transform: scale(1.05); }
+
+/* input */
+input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* ikon */
+.icons {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+/* térkép animáció */
+.map {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.route {
+    margin-top: 10px;
+    height: 4px;
+    background: #fff;
+    position: relative;
+}
+.plane {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    transition: 2s;
+}
+
+.bd{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    transition: 2s;
+    background: url('./assets/bd.png') center/cover no-repeat;
+}
+
+/* boríték */
+.envelope {
+    width: 120px;
+    height: 80px;
+    background: #d9a066;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    overflow: visible;
+}
+.flap {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    /* EZ VOLT A GOND: lefelé mutató háromszög kell */
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 40px solid #c97b63;
+
+    top: 0;
+    transform-origin: top;
+
+    /* zárt állapot */
+    transform: rotateX(0deg);
+    transition: transform 1s;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+/* ticket */
+.ticket {
+    background: linear-gradient(135deg,#c4aa85,#c4aa85);
+    color: #3e2f1c;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.ticket h2 {
+    margin: 0;
+}
+
+.final {
+    font-size: 30px;
+    color: #8b0000;
+    margin: 10px 0;
+}
+
+.personal {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* mobil */
+@media(max-width:500px){
+    .overlay { width: 90%; }
+}
